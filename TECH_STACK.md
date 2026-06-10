@@ -1,4 +1,4 @@
-# TECH_STACK.md — Reelise
+# TECH_STACK.md — Instant!Q
 **Version:** 1.0.0
 **Status:** MVP
 **Last Updated:** 2025
@@ -29,7 +29,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                        REELISE STACK                        │
+│                        INSTANT!Q STACK                        │
 ├─────────────────┬───────────────────────────────────────────┤
 │ Layer           │ Technology                                 │
 ├─────────────────┼───────────────────────────────────────────┤
@@ -239,11 +239,11 @@ process_logs             → pipeline step audit trail
 
 **Queue Names:**
 ```
-reelise:reel_queue        → New reels pending CTA detection
-reelise:comment_queue     → Reels ready for comment action
-reelise:resource_queue    → Post-comment DM monitoring jobs
-reelise:retry_queue       → Failed jobs awaiting retry
-reelise:notion_sync_queue → Resources pending Notion sync
+instantiq:reel_queue        → New reels pending CTA detection
+instantiq:comment_queue     → Reels ready for comment action
+instantiq:resource_queue    → Post-comment DM monitoring jobs
+instantiq:retry_queue       → Failed jobs awaiting retry
+instantiq:notion_sync_queue → Resources pending Notion sync
 ```
 
 **Python Client:** `redis-py` with asyncio support (`redis.asyncio`)
@@ -270,9 +270,9 @@ reelise:notion_sync_queue → Resources pending Notion sync
 
 **Buckets:**
 ```
-reelise-resources/     → Downloaded PDFs, media files
-reelise-sessions/      → Playwright session files (private)
-reelise-screenshots/   → Debug screenshots from failures
+instantiq-resources/     → Downloaded PDFs, media files
+instantiq-sessions/      → Playwright session files (private)
+instantiq-screenshots/   → Debug screenshots from failures
 ```
 
 **Access Pattern:**
@@ -328,8 +328,8 @@ Resources Database:
 **Why:** Simple Docker-based deployment. Automatic HTTPS. Environment variable UI. Built-in metrics. No server management required.
 
 **Services on Railway:**
-- `reelise-api` — FastAPI application
-- `reelise-redis` — Redis instance (or use Upstash)
+- `instantiq-api` — FastAPI application
+- `instantiq-redis` — Redis instance (or use Upstash)
 
 ### Automation Worker: Google Cloud VM
 **Machine Type:** `e2-micro` (free tier eligible, 2 vCPU, 1GB RAM)
@@ -488,7 +488,7 @@ REDIS_URL=redis://localhost:6379/0
 SUPABASE_URL=https://xxx.supabase.co
 SUPABASE_ANON_KEY=<key>
 SUPABASE_SERVICE_KEY=<service-key>
-SUPABASE_STORAGE_BUCKET=reelise-resources
+SUPABASE_STORAGE_BUCKET=instantiq-resources
 
 # Instagram Collector Account
 INSTAGRAM_USERNAME=<collector_account>
@@ -510,8 +510,8 @@ DM_MAX_WAIT_MINUTES=30
 
 ### Frontend `.env.local`
 ```env
-NEXT_PUBLIC_API_URL=https://api.reelise.railway.app
-NEXT_PUBLIC_APP_NAME=Reelise
+NEXT_PUBLIC_API_URL=https://api.instantiq.railway.app
+NEXT_PUBLIC_APP_NAME=Instant!Q
 ```
 
 ---
@@ -567,7 +567,7 @@ NEXT_PUBLIC_APP_NAME=Reelise
 
 ## 15. Stack Decision Rationale
 
-### Why This Stack Works for Reelise Specifically
+### Why This Stack Works for Instant!Q Specifically
 
 **Python end-to-end (Backend + Automation):**
 Playwright Python, FastAPI, SQLAlchemy, and Redis all in Python means one language, one dependency management system, shared utilities, and a single Docker image lineage. No context switching.
@@ -586,4 +586,4 @@ Next.js on Vercel is zero-config. FastAPI on Railway is near-zero-config. Both h
 
 ---
 
-*Document Version: 1.0.0 | Reelise MVP*
+*Document Version: 1.0.0 | Instant!Q MVP*

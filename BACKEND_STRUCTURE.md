@@ -1,4 +1,4 @@
-# BACKEND_STRUCTURE.md — Reelise
+# BACKEND_STRUCTURE.md — Instant!Q
 **Version:** 1.0.0
 **Status:** MVP
 **Last Updated:** 2025
@@ -29,7 +29,7 @@
 ## 1. Folder Architecture
 
 ```
-reelise/
+instantiq/
 ├── backend/
 │   ├── app/
 │   │   ├── __init__.py
@@ -164,7 +164,7 @@ async def lifespan(app: FastAPI):
     await redis.aclose()
 
 app = FastAPI(
-    title="Reelise API",
+    title="Instant!Q API",
     version="1.0.0",
     docs_url="/docs",
     lifespan=lifespan,
@@ -172,7 +172,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://reelise.vercel.app", "http://localhost:3000"],
+    allow_origins=["https://instantiq.vercel.app", "http://localhost:3000"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -211,7 +211,7 @@ class Settings(BaseSettings):
     SUPABASE_URL: str
     SUPABASE_ANON_KEY: str
     SUPABASE_SERVICE_KEY: str
-    SUPABASE_STORAGE_BUCKET: str = "reelise-resources"
+    SUPABASE_STORAGE_BUCKET: str = "instantiq-resources"
 
     # Notion
     NOTION_API_KEY: str
@@ -629,12 +629,12 @@ async def get_redis_client() -> aioredis.Redis:
 
 ```python
 class QueueNames:
-    REEL         = "reelise:reel_queue"
-    COMMENT      = "reelise:comment_queue"
-    RESOURCE     = "reelise:resource_queue"
-    NOTION_SYNC  = "reelise:notion_sync_queue"
-    RETRY        = "reelise:retry_queue"
-    DEAD_LETTER  = "reelise:dead_letter_queue"
+    REEL         = "instantiq:reel_queue"
+    COMMENT      = "instantiq:comment_queue"
+    RESOURCE     = "instantiq:resource_queue"
+    NOTION_SYNC  = "instantiq:notion_sync_queue"
+    RETRY        = "instantiq:retry_queue"
+    DEAD_LETTER  = "instantiq:dead_letter_queue"
 ```
 
 ### `queue/producer.py`
@@ -772,15 +772,15 @@ class BaseWorker(ABC):
 ### Systemd Service (Google Cloud VM)
 
 ```ini
-# /etc/systemd/system/reelise-reel-worker.service
+# /etc/systemd/system/instantiq-reel-worker.service
 [Unit]
-Description=Reelise Reel Worker
+Description=Instant!Q Reel Worker
 After=network.target docker.service
 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/reelise
+WorkingDirectory=/home/ubuntu/instantiq
 ExecStart=docker compose -f docker-compose.prod.yml run --rm worker-reel
 Restart=always
 RestartSec=10
@@ -1075,7 +1075,7 @@ class JSONFormatter(logging.Formatter):
         return json.dumps(log_data)
 
 def get_logger(name: str) -> logging.Logger:
-    logger = logging.getLogger(f"reelise.{name}")
+    logger = logging.getLogger(f"instantiq.{name}")
     if not logger.handlers:
         handler = logging.StreamHandler(sys.stdout)
         handler.setFormatter(JSONFormatter())
@@ -1268,7 +1268,7 @@ REDIS_URL=redis://localhost:6379/0
 SUPABASE_URL=https://xxx.supabase.co
 SUPABASE_ANON_KEY=eyJxxx
 SUPABASE_SERVICE_KEY=eyJxxx
-SUPABASE_STORAGE_BUCKET=reelise-resources
+SUPABASE_STORAGE_BUCKET=instantiq-resources
 
 # ─── Instagram ─────────────────────────────
 INSTAGRAM_USERNAME=reelise_collector
@@ -1292,8 +1292,8 @@ DM_MAX_WAIT_MINUTES=30
 ### Frontend `.env.local`
 
 ```env
-NEXT_PUBLIC_API_URL=https://api.reelise.railway.app
-NEXT_PUBLIC_APP_NAME=Reelise
+NEXT_PUBLIC_API_URL=https://api.instantiq.railway.app
+NEXT_PUBLIC_APP_NAME=Instant!Q
 NEXT_PUBLIC_APP_VERSION=1.0.0
 ```
 
@@ -1309,7 +1309,7 @@ version: '3.9'
 services:
   api:
     build: ./backend
-    container_name: reelise-api
+    container_name: instantiq-api
     ports:
       - "8000:8000"
     environment:
@@ -1318,7 +1318,7 @@ services:
     depends_on:
       - redis
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
@@ -1328,7 +1328,7 @@ services:
 
   worker-dm-listener:
     build: ./automation
-    container_name: reelise-dm-listener
+    container_name: instantiq-dm-listener
     command: python -m workers.dm_listener_worker
     env_file: ./automation/.env
     volumes:
@@ -1337,14 +1337,14 @@ services:
       - redis
       - api
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
     environment:
       - DISPLAY=:99
 
   worker-reel:
     build: ./automation
-    container_name: reelise-reel-worker
+    container_name: instantiq-reel-worker
     command: python -m workers.reel_worker
     env_file: ./automation/.env
     volumes:
@@ -1353,43 +1353,43 @@ services:
       - redis
       - api
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
     environment:
       - DISPLAY=:99
 
   worker-notion-sync:
     build: ./automation
-    container_name: reelise-notion-sync
+    container_name: instantiq-notion-sync
     command: python -m workers.notion_sync_worker
     env_file: ./automation/.env
     depends_on:
       - redis
       - api
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
 
   redis:
     image: redis:7-alpine
-    container_name: reelise-redis
+    container_name: instantiq-redis
     ports:
       - "6379:6379"
     volumes:
       - redis-data:/data
     command: redis-server --save 60 1 --loglevel warning
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
 
   frontend:
     build: ./frontend
-    container_name: reelise-frontend
+    container_name: instantiq-frontend
     ports:
       - "3000:3000"
     env_file: ./frontend/.env.local
     networks:
-      - reelise-net
+      - instantiq-net
     profiles: ["local"]  # Only in local dev
 
 volumes:
@@ -1397,7 +1397,7 @@ volumes:
   session-data:    # Persists Instagram session across container restarts
 
 networks:
-  reelise-net:
+  instantiq-net:
     driver: bridge
 ```
 
@@ -1475,4 +1475,4 @@ exec "$@"
 
 ---
 
-*Document Version: 1.0.0 | Reelise MVP*
+*Document Version: 1.0.0 | Instant!Q MVP*

@@ -368,7 +368,7 @@ export default function Dashboard() {
               <Instagram className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="font-extrabold text-xl tracking-tight text-white leading-none">REELISE</h1>
+              <h1 className="font-extrabold text-xl tracking-tight text-white leading-none">INSTANT!Q</h1>
               <span className="text-[10px] uppercase font-bold text-violet-400/80 tracking-widest mt-1 block">Collector Engine</span>
             </div>
           </div>
@@ -989,7 +989,7 @@ export default function Dashboard() {
         
         {/* FOOTER */}
         <footer className="border-t border-slate-800/80 bg-[#040507] py-6 px-10 text-center text-xs text-slate-500">
-          Reelise Core MVP Version 1.0.0. Designed for low-footprint, single-admin Instagram resource auto-harvesting.
+          Instant!Q Core MVP Version 1.0.0. Designed for low-footprint, single-admin Instagram resource auto-harvesting.
         </footer>
 
       </main>

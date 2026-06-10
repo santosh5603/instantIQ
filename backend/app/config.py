@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     SUPABASE_URL: str = "https://dummy.supabase.co"
     SUPABASE_ANON_KEY: str = "dummy_anon_key"
     SUPABASE_SERVICE_KEY: str = "dummy_service_key"
-    SUPABASE_STORAGE_BUCKET: str = "reelise-resources"
+    SUPABASE_STORAGE_BUCKET: str = "instantiq-resources"
 
     # Notion
     NOTION_API_KEY: str = "secret_dummy_notion_key"

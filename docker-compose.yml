@@ -5,7 +5,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: reelise-api
+    container_name: instantiq-api
     ports:
       - "8000:8000"
     env_file: ./backend/.env
@@ -17,7 +17,7 @@ services:
     depends_on:
       - redis
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
 
   # DM Listener: Polls Instagram DM inbox via instagrapi (NO browser needed)
@@ -25,7 +25,7 @@ services:
     build:
       context: ./automation
       dockerfile: Dockerfile
-    container_name: reelise-dm-listener
+    container_name: instantiq-dm-listener
     command: python -m workers.dm_listener_worker
     env_file: ./automation/.env
     volumes:
@@ -36,7 +36,7 @@ services:
       - redis
       - api
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
     environment:
       - REDIS_URL=redis://redis:6379/0
@@ -48,7 +48,7 @@ services:
     build:
       context: ./automation
       dockerfile: Dockerfile
-    container_name: reelise-rq-worker
+    container_name: instantiq-rq-worker
     command: python -m workers.reel_worker
     env_file: ./automation/.env
     volumes:
@@ -59,7 +59,7 @@ services:
       - redis
       - api
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
     environment:
       - DISPLAY=:99
@@ -71,7 +71,7 @@ services:
     build:
       context: ./automation
       dockerfile: Dockerfile
-    container_name: reelise-notion-sync
+    container_name: instantiq-notion-sync
     command: python -m workers.notion_sync_worker
     env_file: ./automation/.env
     volumes:
@@ -82,7 +82,7 @@ services:
       - redis
       - api
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
     environment:
       - REDIS_URL=redis://redis:6379/0
@@ -90,7 +90,7 @@ services:
 
   rq-dashboard:
     image: cjlapao/rq-dashboard:latest
-    container_name: reelise-rq-dashboard
+    container_name: instantiq-rq-dashboard
     ports:
       - "9181:9181"
     environment:
@@ -101,12 +101,12 @@ services:
     depends_on:
       - redis
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
 
   redis:
     image: redis:7-alpine
-    container_name: reelise-redis
+    container_name: instantiq-redis
     ports:
       - "6379:6379"
     volumes:
@@ -115,11 +115,11 @@ services:
     environment:
       - TZ=Asia/Kolkata
     networks:
-      - reelise-net
+      - instantiq-net
     restart: unless-stopped
 
 networks:
-  reelise-net:
+  instantiq-net:
     driver: bridge
 
 volumes:

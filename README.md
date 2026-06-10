@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:4A00E0,50:8E2DE2,100:00D2FF&height=230&section=header&text=Reelise&fontSize=80&fontAlignY=45&desc=Turn%20Every%20Saved%20Reel%20Into%20Knowledge%20You%20Own&descAlignY=70&descSize=17&animation=scaleIn&fontColor=ffffff&descColor=E0E0FF" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&color=gradient&height=250&section=header&text=Instant!Q&fontSize=90&fontAlignY=35&desc=Turn%20Every%20Saved%20Reel%20Into%20Knowledge%20You%20Own&descAlignY=55&descSize=18&animation=fadeIn&fontColor=ffffff" width="100%"/>
 
 <br/>
 
@@ -44,7 +44,7 @@
 <details open>
 <summary><b>Click to expand</b></summary>
 
-- [🧠 What is Reelise?](#-what-is-reelise)
+- [🧠 What is Instant!Q?](#-what-is-instantiq)
 - [🔥 The Problem](#-the-problem)
 - [✨ The Solution](#-the-solution)
 - [🎯 Key Features](#-key-features)
@@ -70,28 +70,28 @@
 
 <br/>
 
-<!-- What is Reelise -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<!-- What is Instant!Q -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
-## 🧠 What is Reelise?
+## 🧠 What is Instant!Q?
 
 > **"Every reel you forward becomes a resource you own."**
 
-**Reelise** is a personal knowledge automation system that transforms the passive act of saving an Instagram reel into an active, fully automated pipeline. It detects the creator's call-to-action (CTA), comments the required keyword, captures the DM response, and stores the resource in your **Notion knowledge base** — all with **zero manual follow-up**.
+**Instant!Q** is a personal knowledge automation system that transforms the passive act of saving an Instagram reel into an active, fully automated pipeline. It detects the creator's call-to-action (CTA), comments the required keyword, captures the DM response, and stores the resource in your **Notion knowledge base** — all with **zero manual follow-up**.
 
 Think of it as a **personal bridge** between Instagram's creator economy and your second brain.
 
 <div align="center">
 
 ```
-📱 You save a reel  →  🤖 Reelise does everything else  →  📚 Resource lands in Notion
+📱 You save a reel  →  🤖 Instant!Q does everything else  →  📚 Resource lands in Notion
 ```
 
 </div>
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🔥 The Problem
 
@@ -125,11 +125,11 @@ Career guides, programming tutorials, AI toolkits, fitness protocols — **all l
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## ✨ The Solution
 
-Reelise automates the **entire pipeline** from reel share to structured knowledge entry — with just **one manual action**: sharing the reel to a collector account.
+Instant!Q automates the **entire pipeline** from reel share to structured knowledge entry — with just **one manual action**: sharing the reel to a collector account.
 
 <div align="center">
 
@@ -157,7 +157,7 @@ graph LR
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🎯 Key Features
 
@@ -184,7 +184,7 @@ graph LR
 
 ### 🤖 Human-Like Automation
 
-Reelise is engineered to behave like a real user:
+Instant!Q is engineered to behave like a real user:
 
 - 🕐 **Randomized delays** between actions (5–30 seconds)
 - ⌨️ **Character-by-character typing** with 50–150ms per keystroke
@@ -195,7 +195,7 @@ Reelise is engineered to behave like a real user:
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🏗️ Architecture
 
@@ -203,7 +203,7 @@ Reelise is engineered to behave like a real user:
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│                         REELISE ARCHITECTURE                         │
+│                         INSTANT!Q ARCHITECTURE                         │
 └──────────────────────────────────────────────────────────────────────┘
 
   [Admin User]
@@ -259,12 +259,12 @@ Reelise is engineered to behave like a real user:
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 📁 Project Structure
 
 ```
-reelise/
+instantiq/
 │
 ├── 🐍 backend/                    # FastAPI REST API
 │   ├── app/
@@ -333,7 +333,7 @@ reelise/
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## ⚙️ Tech Stack
 
@@ -355,7 +355,7 @@ reelise/
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🚀 Getting Started
 
@@ -411,7 +411,7 @@ REDIS_URL=redis://localhost:6379/0
 SUPABASE_URL=https://<project>.supabase.co
 SUPABASE_ANON_KEY=<your-anon-key>
 SUPABASE_SERVICE_KEY=<your-service-key>
-SUPABASE_STORAGE_BUCKET=reelise-resources
+SUPABASE_STORAGE_BUCKET=instantiq-resources
 
 # Instagram Collector Account
 INSTAGRAM_USERNAME=<collector_username>
@@ -469,12 +469,12 @@ docker compose down
 
 | Service | Container | Port | Description |
 |:---|:---|:---|:---|
-| `api` | `reelise-api` | `8000` | FastAPI backend |
-| `dm-listener` | `reelise-dm-listener` | — | DM inbox poller |
-| `worker-rq` | `reelise-rq-worker` | — | Reel pipeline processor |
-| `worker-notion-sync` | `reelise-notion-sync` | — | Notion sync worker |
-| `rq-dashboard` | `reelise-rq-dashboard` | `9181` | Queue monitoring UI |
-| `redis` | `reelise-redis` | `6379` | Message queue |
+| `api` | `instantiq-api` | `8000` | FastAPI backend |
+| `dm-listener` | `instantiq-dm-listener` | — | DM inbox poller |
+| `worker-rq` | `instantiq-rq-worker` | — | Reel pipeline processor |
+| `worker-notion-sync` | `instantiq-notion-sync` | — | Notion sync worker |
+| `rq-dashboard` | `instantiq-rq-dashboard` | `9181` | Queue monitoring UI |
+| `redis` | `instantiq-redis` | `6379` | Message queue |
 
 </details>
 
@@ -542,7 +542,7 @@ npm run dev
 
 ```bash
 # Using Docker
-docker run -d --name reelise-redis -p 6379:6379 redis:7-alpine
+docker run -d --name instantiq-redis -p 6379:6379 redis:7-alpine
 ```
 
 </details>
@@ -570,7 +570,7 @@ python manual_login.py
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🔧 Configuration
 
@@ -604,7 +604,7 @@ Create a Notion database with these properties:
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 📡 API Reference
 
@@ -640,7 +640,7 @@ The backend exposes a RESTful API with auto-generated Swagger documentation.
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🔄 Pipeline Flow
 
@@ -695,7 +695,7 @@ stateDiagram-v2
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🧪 Testing
 
@@ -712,7 +712,7 @@ open http://localhost:9181
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🗺️ Roadmap
 
@@ -720,7 +720,7 @@ open http://localhost:9181
 
 ```mermaid
 timeline
-    title Reelise Development Roadmap
+    title Instant!Q Development Roadmap
     section V1 — MVP ✅
         Core Pipeline : DM detection, CTA matching, auto-comment
         Storage Layer : Supabase PostgreSQL + file storage
@@ -745,7 +745,7 @@ timeline
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 🤝 Contributing
 
@@ -782,7 +782,7 @@ This project follows [Conventional Commits](https://www.conventionalcommits.org/
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## 📄 License
 
@@ -790,7 +790,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=1&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&height=1&section=header" width="100%"/>
 
 ## ⚠️ Disclaimer
 
@@ -809,7 +809,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 <div align="center">
 
 <!-- Animated Footer -->
-<img src="https://capsule-render.vercel.app/api?type=slice&color=0:4A00E0,50:8E2DE2,100:00D2FF&height=120&section=footer&reversal=true&text=⭐%20Star%20this%20repo&fontSize=16&fontAlignY=70&fontColor=ffffff&animation=twinkling" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&color=gradient&height=120&section=footer&animation=fadeIn" width="100%"/>
 
 <br/>
 

@@ -1,4 +1,4 @@
-# APP_FLOW.md — Reelise
+# APP_FLOW.md — Instant!Q
 **Version:** 1.0.0
 **Status:** MVP
 **Last Updated:** 2025
@@ -29,7 +29,7 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│                         REELISE ARCHITECTURE                         │
+│                         INSTANT!Q ARCHITECTURE                         │
 └──────────────────────────────────────────────────────────────────────┘
 
   [Admin User]
@@ -963,4 +963,4 @@ SESSION SECURITY:
 
 ---
 
-*Document Version: 1.0.0 | Reelise MVP*
+*Document Version: 1.0.0 | Instant!Q MVP*

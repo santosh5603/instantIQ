@@ -17,7 +17,7 @@ logger = logging.getLogger("reelise_api")
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup actions
-    logger.info("Initializing Reelise FastAPI backend...")
+    logger.info("Initializing Instant!Q FastAPI backend...")
     
     # 1. Ping DB connection
     try:
@@ -39,11 +39,11 @@ async def lifespan(app: FastAPI):
     # Shutdown actions
     logger.info("Cleaning up backend client sessions...")
     await redis_client.close()
-    logger.info("Reelise backend shutdown complete.")
+    logger.info("Instant!Q backend shutdown complete.")
 
 app = FastAPI(
-    title="Reelise API",
-    description="Production-grade core MVP API driving the Reelise Instagram-to-Notion pipeline.",
+    title="Instant!Q API",
+    description="Production-grade core MVP API driving the Instant!Q Instagram-to-Notion pipeline.",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -69,7 +69,7 @@ app.include_router(analytics.router)
 @app.get("/")
 async def root():
     return {
-        "app": "Reelise API Gateway",
+        "app": "Instant!Q API Gateway",
         "version": "1.0.0",
         "docs_url": "/docs",
         "status": "online"

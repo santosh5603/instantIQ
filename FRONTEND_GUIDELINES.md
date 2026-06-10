@@ -1,4 +1,4 @@
-# FRONTEND_GUIDELINES.md — Reelise
+# FRONTEND_GUIDELINES.md — Instant!Q
 **Version:** 1.0.0
 **Status:** MVP
 **Last Updated:** 2025
@@ -30,7 +30,7 @@
 
 ### Core Principle: Clarity Over Decoration
 
-The Reelise frontend is a **monitoring and retrieval tool** — not a marketing page. Every design decision must serve either:
+The Instant!Q frontend is a **monitoring and retrieval tool** — not a marketing page. Every design decision must serve either:
 
 1. **Operational awareness** — What is the system doing right now?
 2. **Knowledge retrieval** — Find a specific resource quickly
@@ -69,7 +69,7 @@ The primary theme is **dark**. Reasoning:
 
 ### Logo & Naming
 
-- Product name: **Reelise**
+- Product name: **Instant!Q**
 - Wordmark style: lowercase, monospace-adjacent
 - Icon concept: reel (film/Instagram) + knowledge node
 
@@ -854,7 +854,7 @@ className={cn('bg-zinc-900', isActive ? 'border-brand' : 'border-zinc-800')}
 ### Header Content
 
 ```
-Left:   [Reelise logo/wordmark] / [Page breadcrumb]
+Left:   [Instant!Q logo/wordmark] / [Page breadcrumb]
 Right:  [System health dot + label] [Queue depth badge]
 ```
 
@@ -872,4 +872,4 @@ Right:  [System health dot + label] [Queue depth badge]
 
 ---
 
-*Document Version: 1.0.0 | Reelise MVP*
+*Document Version: 1.0.0 | Instant!Q MVP*

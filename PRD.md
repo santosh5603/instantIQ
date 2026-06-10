@@ -1,4 +1,4 @@
-# PRD.md — Reelise
+# PRD.md — Instant!Q
 **Version:** 1.0.0
 **Status:** MVP
 **Owner:** Admin (Single User)
@@ -30,7 +30,7 @@
 
 > **"Every reel you forward becomes a resource you own."**
 
-Reelise is a personal knowledge automation system that bridges the gap between Instagram's creator-gated knowledge economy and a user's personal second brain. The product transforms the passive act of saving a reel into an active, automated pipeline that claims the promised resource and stores it inside a structured Notion knowledge base — with zero manual follow-up required from the user.
+Instant!Q is a personal knowledge automation system that bridges the gap between Instagram's creator-gated knowledge economy and a user's personal second brain. The product transforms the passive act of saving a reel into an active, automated pipeline that claims the promised resource and stores it inside a structured Notion knowledge base — with zero manual follow-up required from the user.
 
 The long-term vision is to become the definitive personal layer between social media content and personal knowledge management — starting with Instagram, expanding to TikTok, YouTube Shorts, and LinkedIn carousels.
 
@@ -481,4 +481,4 @@ These are explicitly out of scope for V1:
 
 ---
 
-*Document Version: 1.0.0 | Reelise MVP*
+*Document Version: 1.0.0 | Instant!Q MVP*

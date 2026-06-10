@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Reelise Hub — Second Brain Knowledge & Automation Dashboard",
+  title: "Instant!Q Hub — Second Brain Knowledge & Automation Dashboard",
   description: "Capture valuable resources, PDFs, and guides from Instagram Reels into your structured second brain and Notion databases automatically.",
 };
 
