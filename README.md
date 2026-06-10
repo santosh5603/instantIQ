@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=250&section=header&text=Reelise&fontSize=90&fontAlignY=35&desc=Turn%20Every%20Saved%20Reel%20Into%20Knowledge%20You%20Own&descAlignY=55&descSize=18&animation=fadeIn&fontColor=ffffff" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:4A00E0,50:8E2DE2,100:00D2FF&height=230&section=header&text=Reelise&fontSize=80&fontAlignY=45&desc=Turn%20Every%20Saved%20Reel%20Into%20Knowledge%20You%20Own&descAlignY=70&descSize=17&animation=scaleIn&fontColor=ffffff&descColor=E0E0FF" width="100%"/>
 
 <br/>
 
@@ -809,7 +809,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 <div align="center">
 
 <!-- Animated Footer -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=slice&color=0:4A00E0,50:8E2DE2,100:00D2FF&height=120&section=footer&reversal=true&text=⭐%20Star%20this%20repo&fontSize=16&fontAlignY=70&fontColor=ffffff&animation=twinkling" width="100%"/>
 
 <br/>
 
