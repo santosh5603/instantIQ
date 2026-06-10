@@ -1,7 +1,8 @@
 <div align="center">
 
-<!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=venom&color=gradient&height=250&section=header&text=Instant!Q&fontSize=90&fontAlignY=35&desc=Turn%20Every%20Saved%20Reel%20Into%20Knowledge%20You%20Own&descAlignY=55&descSize=18&animation=fadeIn&fontColor=ffffff" width="100%"/>
+<!-- Header Text -->
+# ⚡ Instant!Q
+### Turn Every Saved Reel Into Knowledge You Own
 
 <br/>
 
@@ -808,10 +809,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <div align="center">
 
-<!-- Animated Footer -->
-<img src="https://capsule-render.vercel.app/api?type=venom&color=gradient&height=120&section=footer&animation=fadeIn" width="100%"/>
 
-<br/>
 
 **Built with ❤️ by [Santosh](https://github.com/santosh5603)**
 
