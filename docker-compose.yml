@@ -1,0 +1,126 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: instantiq-api
+    ports:
+      - "8000:8000"
+    env_file: ./backend/.env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - TZ=Asia/Kolkata
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - redis
+    networks:
+      - instantiq-net
+    restart: unless-stopped
+
+  # DM Listener: Polls Instagram DM inbox via instagrapi (NO browser needed)
+  dm-listener:
+    build:
+      context: ./automation
+      dockerfile: Dockerfile
+    container_name: instantiq-dm-listener
+    command: python -m workers.dm_listener_worker
+    env_file: ./automation/.env
+    volumes:
+      - ./automation:/app
+      - ./session:/app/session
+      - ./backend:/app/backend
+    depends_on:
+      - redis
+      - api
+    networks:
+      - instantiq-net
+    restart: unless-stopped
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - TZ=Asia/Kolkata
+
+  # RQ Worker: Processes reel_queue + notion_sync_queue
+  # Needs Playwright/Xvfb ONLY for caption extraction
+  worker-rq:
+    build:
+      context: ./automation
+      dockerfile: Dockerfile
+    container_name: instantiq-rq-worker
+    command: python -m workers.reel_worker
+    env_file: ./automation/.env
+    volumes:
+      - ./automation:/app
+      - ./session:/app/session
+      - ./backend:/app/backend
+    depends_on:
+      - redis
+      - api
+    networks:
+      - instantiq-net
+    restart: unless-stopped
+    environment:
+      - DISPLAY=:99
+      - REDIS_URL=redis://redis:6379/0
+      - TZ=Asia/Kolkata
+
+  # Notion Sync Worker: Syncs harvested resources to Notion DB
+  worker-notion-sync:
+    build:
+      context: ./automation
+      dockerfile: Dockerfile
+    container_name: instantiq-notion-sync
+    command: python -m workers.notion_sync_worker
+    env_file: ./automation/.env
+    volumes:
+      - ./automation:/app
+      - ./session:/app/session
+      - ./backend:/app/backend
+    depends_on:
+      - redis
+      - api
+    networks:
+      - instantiq-net
+    restart: unless-stopped
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - TZ=Asia/Kolkata
+
+  rq-dashboard:
+    image: cjlapao/rq-dashboard:latest
+    container_name: instantiq-rq-dashboard
+    ports:
+      - "9181:9181"
+    environment:
+      - RQ_DASHBOARD_REDIS_URL=redis://redis:6379/0
+      - RQ_DASHBOARD_USERNAME=${RQ_DASHBOARD_USERNAME:-admin}
+      - RQ_DASHBOARD_PASSWORD=${RQ_DASHBOARD_PASSWORD:-admin}
+      - TZ=Asia/Kolkata
+    depends_on:
+      - redis
+    networks:
+      - instantiq-net
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: instantiq-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --save 60 1 --loglevel warning
+    environment:
+      - TZ=Asia/Kolkata
+    networks:
+      - instantiq-net
+    restart: unless-stopped
+
+networks:
+  instantiq-net:
+    driver: bridge
+
+volumes:
+  redis-data:
