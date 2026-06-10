@@ -109,3 +109,11 @@ next-env.d.ts
 .vercel
 *.bak
 *.tmp
+
+# ========================
+# Markdown Exclusions
+# ========================
+*.md
+!README.md
+!**/README.md
+
